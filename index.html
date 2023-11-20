@@ -1,69 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/assets/wordle_logo_32x32.png"
-    />
-    <link rel="stylesheet" href="/styles/styles.css" />
-    <script src="/scripts/app.js"></script>
-    <title>Wordle</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="row1" id="row1">
-        <div class="row1-column1" id="row1-column1"></div>
-        <div class="row1-column2" id="row1-column2"></div>
-        <div class="row1-column3" id="row1-column3"></div>
-        <div class="row1-column4" id="row1-column4"></div>
-        <div class="row1-column5" id="row1-column5"></div>
-      </div>
-      <div class="row2" id="row2">
-        <div class="row2-column1" id="row2-column1"></div>
-        <div class="row2-column2" id="row2-column2"></div>
-        <div class="row2-column3" id="row2-column3"></div>
-        <div class="row2-column4" id="row2-column4"></div>
-        <div class="row2-column5" id="row2-column5"></div>
-      </div>
-      <div class="row3" id="row3">
-        <div class="row3-column1" id="row3-column1"></div>
-        <div class="row3-column2" id="row3-column2"></div>
-        <div class="row3-column3" id="row3-column3"></div>
-        <div class="row3-column4" id="row3-column4"></div>
-        <div class="row3-column5" id="row3-column5"></div>
-      </div>
-      <div class="row4" id="row4">
-        <div class="row4-column1" id="row4-column1"></div>
-        <div class="row4-column2" id="row4-column2"></div>
-        <div class="row4-column3" id="row4-column3"></div>
-        <div class="row4-column4" id="row4-column4"></div>
-        <div class="row4-column5" id="row4-column5"></div>
-      </div>
-      <div class="row5" id="row5">
-        <div class="row5-column1" id="row5-column1"></div>
-        <div class="row5-column2" id="row5-column2"></div>
-        <div class="row5-column3" id="row5-column3"></div>
-        <div class="row5-column4" id="row5-column4"></div>
-        <div class="row5-column5" id="row5-column5"></div>
-      </div>
-      <div class="row6">
-        <div class="row6-column1" id="row6-column1"></div>
-        <div class="row6-column2" id="row6-column2"></div>
-        <div class="row6-column3" id="row6-column3"></div>
-        <div class="row6-column4" id="row6-column4"></div>
-        <div class="row6-column5" id="row6-column5"></div>
-      </div>
-      <input type="text" id="input" name="input" maxlength="5" />
-      <input
-        type="submit"
-        value="Guess"
-        id="button1"
-        onclick="uiUpdater(splitSecretWord)"
-      />
-    </div>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/assets/wordle_logo_32x32.png"
+        />
+        <link rel="stylesheet" href="/styles/styles.css" />
+        <script src="/scripts/app.js"></script>
+        <title>Wordle</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row1" id="row1">
+                <div class="row1-column1" id="row1-column1"></div>
+                <div class="row1-column2" id="row1-column2"></div>
+                <div class="row1-column3" id="row1-column3"></div>
+                <div class="row1-column4" id="row1-column4"></div>
+                <div class="row1-column5" id="row1-column5"></div>
+            </div>
+            <div class="row2" id="row2">
+                <div class="row2-column1" id="row2-column1"></div>
+                <div class="row2-column2" id="row2-column2"></div>
+                <div class="row2-column3" id="row2-column3"></div>
+                <div class="row2-column4" id="row2-column4"></div>
+                <div class="row2-column5" id="row2-column5"></div>
+            </div>
+            <div class="row3" id="row3">
+                <div class="row3-column1" id="row3-column1"></div>
+                <div class="row3-column2" id="row3-column2"></div>
+                <div class="row3-column3" id="row3-column3"></div>
+                <div class="row3-column4" id="row3-column4"></div>
+                <div class="row3-column5" id="row3-column5"></div>
+            </div>
+            <div class="row4" id="row4">
+                <div class="row4-column1" id="row4-column1"></div>
+                <div class="row4-column2" id="row4-column2"></div>
+                <div class="row4-column3" id="row4-column3"></div>
+                <div class="row4-column4" id="row4-column4"></div>
+                <div class="row4-column5" id="row4-column5"></div>
+            </div>
+            <div class="row5" id="row5">
+                <div class="row5-column1" id="row5-column1"></div>
+                <div class="row5-column2" id="row5-column2"></div>
+                <div class="row5-column3" id="row5-column3"></div>
+                <div class="row5-column4" id="row5-column4"></div>
+                <div class="row5-column5" id="row5-column5"></div>
+            </div>
+            <div class="row6" id="row6">
+                <div class="row6-column1" id="row6-column1"></div>
+                <div class="row6-column2" id="row6-column2"></div>
+                <div class="row6-column3" id="row6-column3"></div>
+                <div class="row6-column4" id="row6-column4"></div>
+                <div class="row6-column5" id="row6-column5"></div>
+            </div>
+            <div class="input-container">
+                <input
+                    type="text"
+                    class="input-field"
+                    id="input"
+                    name="input"
+                    maxlength="5"
+                />
+                <input
+                    type="submit"
+                    class="submit-button"
+                    value="Guess"
+                    id="button1"
+                    onclick="uiUpdater(splitSecretWord)"
+                />
+                <input
+                    type="submit"
+                    class="reset-button"
+                    value="Reset"
+                    id="button2"
+                    onclick="resetGame()"
+                />
+            </div>
+        </div>
+    </body>
 </html>
