@@ -4,6 +4,7 @@ let splitSecretWord;
 let validInput;
 let wonGame = false;
 
+// Row objekter
 let rows = {
     row1: false,
     row2: false,
@@ -13,6 +14,7 @@ let rows = {
     row6: false,
 };
 
+// Tjek om row i objektet står til false for at fortsætte
 function selectRow() {
     for (let [key, value] of Object.entries(rows)) {
         if (value === false) {
@@ -21,12 +23,13 @@ function selectRow() {
     }
 }
 
+// Tjek om indtastet ord lever op til kravene
 function inputValidation() {
     let inputFromHTML = document.getElementById("input").value.toLowerCase();
     let validInput = /^[a-z]+$/.test(inputFromHTML);
 
     if (!validInput) {
-        alert("Dit input er ikke valid. Bogstaver kun.");
+        alert("Dit input er ikke tilladt. Brug kun bogstaver.");
     } else if (inputFromHTML.length !== 5) {
         alert("Dit input er ikke 5 bogstaver langt.");
     } else if (!words.includes(inputFromHTML)) {
@@ -40,6 +43,7 @@ function inputValidation() {
     }
 }
 
+// Opdatering af GUI med farver på felterne
 function uiUpdater(splitSecretWord) {
     validInput = inputValidation();
     let inputSplitArray = validInput.split("");
@@ -71,6 +75,7 @@ function uiUpdater(splitSecretWord) {
     checkIfWordIsCorrect();
 }
 
+// Tjek om det gættede ord er korrekt
 function checkIfWordIsCorrect() {
     for (let [key, value] of Object.entries(rows)) {
         if (
@@ -90,17 +95,18 @@ function checkIfWordIsCorrect() {
     }
 }
 
+// Reset siden og start med nyt ord
 function resetGame() {
     location.reload();
 }
 
+// Indlæs fil med alle ord
 fetch("/assets/wordle.txt")
     .then((response) => response.text())
     .then((data) => {
-        words = data.split(" ");
-        const randomWord = Math.floor(Math.random() * words.length);
-        //console.log(words[randomWord]);
-
+        words = data.split(" "); // Separer alle ord
+        const randomWord = Math.floor(Math.random() * words.length); // Udvælg et tilfældigt ord
+        console.log(words[randomWord]); // afslør det korrekte ord i console til test
         secretWord = words[randomWord];
-        splitSecretWord = secretWord.split("");
+        splitSecretWord = secretWord.split(""); // Split ordet i enkelte bogstaver
     });

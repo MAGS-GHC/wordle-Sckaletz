@@ -3,6 +3,12 @@ html {
     background-color: rgb(25, 25, 25);
 }
 
+.h1 {
+    color: yellow;
+    font-size: 4em;
+    text-align: center;
+}
+
 .container {
     height: 95vh;
     margin: 0 auto;
