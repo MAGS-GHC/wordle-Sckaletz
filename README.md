@@ -1,6 +1,6 @@
 PLAN
 
-- Oprette grid 5x6 i HTML og CSS
+- Oprette grid 5x6 i HTML og CSS &#10023
 - Tag input og placer i hver deres boks
 - Læs fil og split ord efter hvert mellemrum
 - Vælg et random ord fra array
