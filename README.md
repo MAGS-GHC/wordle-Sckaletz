@@ -1,13 +1,14 @@
 PLAN
 
-1. Oprette grid 5x6 i HTML og CSS
-2. Læs fil og split ord efter hvert mellemrum
-3. Vælg et random ord fra array
-4. Split ord i enkelte bogstaver og lav array
-5. Lav nyt input (indtast ord)
-6. Er det et korrekt ord? Tjek med hele listen.
-7. Sammenlign bogstaverne ud fra array
-8. Angiv farver på de 5 pladser afhængig af, om de er korrekte eller ej
-9. Gå til næste række
-10. Hvis sidste række er udfyldt - "Beklager du er dum"
-11. Hvis gæt er korrekt - "Tillykke"
+- Oprette grid 5x6 i HTML og CSS
+- Tag input og placer i hver deres boks
+- Læs fil og split ord efter hvert mellemrum
+- Vælg et random ord fra array
+- Split ord i enkelte bogstaver og lav array
+- Lav nyt input (indtast ord)
+- Er det et korrekt ord? Tjek med hele listen.
+- Sammenlign bogstaverne ud fra array
+- Angiv farver på de 5 pladser afhængig af, om de er korrekte eller ej
+- Gå til næste række
+- Hvis sidste række er udfyldt - "Beklager du er dum"
+- Hvis gæt er korrekt - "Tillykke"

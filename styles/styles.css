@@ -1,0 +1,39 @@
+html {
+  user-select: none;
+  background-color: rgb(25, 25, 25);
+}
+
+.container {
+  height: 95vh;
+}
+
+.row1,
+.row2,
+.row3,
+.row4,
+.row5,
+.row6 {
+  display: grid;
+  grid-template-columns: 1vw 1vw 1vw 1vw 1vw;
+  grid-gap: 4vw;
+  margin-bottom: 0.5vw;
+  justify-content: center;
+}
+
+.row1 div,
+.row2 div,
+.row3 div,
+.row4 div,
+.row5 div,
+.row6 div {
+  height: 4vw;
+  width: 4vw;
+  font-size: 3vw;
+  text-transform: uppercase;
+  padding-top: 10px;
+  color: white;
+  text-align: center;
+  background-color: rgb(50, 50, 50);
+  border: 3px solid rgb(121, 121, 121);
+  border-radius: 5px;
+}
